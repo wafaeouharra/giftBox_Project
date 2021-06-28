@@ -4,11 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,11 +16,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--//tags -->
+    <!-- //tags -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
@@ -30,34 +32,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header" id="home">
     <div class="container">
         <ul>
-
-            <!--*********************************
-                        <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
+            <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
             <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
-            *******************************************-->
-            <c:choose>
-                <c:when test="${not empty sessionScope.user}">
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Welcome : ${sessionScope.user}</a></li>
-                    <li> <a href="<%=request.getContextPath()%>/loginServlet?action=signout"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sign Out </a></li>
-                </c:when>
-                <c:otherwise>
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
-                    <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
-                </c:otherwise>
-            </c:choose>
-
-
-            <!--****************************************************************************-->
             <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
         </ul>
     </div>
 </div>
-<c:if test="${not empty login}">
-    <div class="alert alert-danger">
-        <strong>OOPS!</strong> Your username or password are incorrect
-    </div>
-</c:if>
 <!-- //header -->
 <!-- header-bot -->
 <div class="header-bot">
@@ -97,7 +78,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"></div>
     </div>
 </div>
-
 <!-- //header-bot -->
 <!-- banner -->
 <div class="ban-top">
@@ -160,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="modal-body modal-body-sub_agile">
                 <div class="col-md-8 modal_body_left modal_body_left1">
                     <h3 class="agileinfo_sign">Sign In <span>Now</span></h3>
-                    <form action="<%=request.getContextPath()%>/loginServlet" method="post">
+                    <form action="<%=request.getContextPath()%>/login" method="post">
                         <div class="styled-input agile-styled-input-top">
                             <input type="text" name="username" required="">
                             <label>Username</label>
@@ -263,239 +243,300 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!-- //Modal2 -->
-
-<!-- banner -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="4" class=""></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.jsp">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item2">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Summer <span>Collection</span></h3>
-                    <p>New Arrivals On Sale</p>
-                    <a class="hvr-outline-out button2" href="mens.jsp">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item3">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.jsp">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item4">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Summer <span>Collection</span></h3>
-                    <p>New Arrivals On Sale</p>
-                    <a class="hvr-outline-out button2" href="mens.jsp">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item5">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>The Biggest <span>Sale</span></h3>
-                    <p>Special for today</p>
-                    <a class="hvr-outline-out button2" href="mens.jsp">Shop Now </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-    <!-- The Modal -->
-</div>
-<!-- //banner -->
-
-
-<!--/grids-->
-<!--/grids-->
-<!-- /new_arrivals -->
-<div class="new_arrivals_agile_w3ls_info">
+<!--/single_page-->
+<!-- /banner_bottom_agile_info -->
+<div class="page-head_agile_info_w3l">
     <div class="container">
-        <h3 class="wthree_text_info">New <span>Arrivals</span></h3>
-        <div id="horizontalTab">
-            <ul class="resp-tabs-list">
-                <li> Men</li>
-                <li> Women</li>
-                <li> Kids</li>
+        <h3>Single <span>Page </span></h3>
+        <!--/w3_short-->
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
 
+                <ul class="w3_short">
+                    <li><a href="index.html">Home</a><i>|</i></li>
+                    <li>Single Page</li>
+                </ul>
+            </div>
+        </div>
+        <!--//w3_short-->
+    </div>
+</div>
+
+<!-- banner-bootom-w3-agileits -->
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <div class="col-md-4 single-right-left ">
+            <div class="grid images_3_of_2">
+                <div class="flexslider">
+
+                    <ul class="slides">
+                        <li data-thumb="images/d2.jpg">
+                            <div class="thumb-image"> <img src="images/d2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                        </li>
+                        <li data-thumb="images/d1.jpg">
+                            <div class="thumb-image"> <img src="images/d1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                        </li>
+                        <li data-thumb="images/d3.jpg">
+                            <div class="thumb-image"> <img src="images/d3.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 single-right-left simpleCart_shelfItem">
+            <h3>${Item.libelle}</h3>
+            <p><span class="item_price">${Item.prix}</span> <del>- $900</del></p>
+            <div class="rating1">
+						<span class="starRating">
+							<input id="rating5" type="radio" name="rating" value="5">
+							<label for="rating5">5</label>
+							<input id="rating4" type="radio" name="rating" value="4">
+							<label for="rating4">4</label>
+							<input id="rating3" type="radio" name="rating" value="3" checked="">
+							<label for="rating3">3</label>
+							<input id="rating2" type="radio" name="rating" value="2">
+							<label for="rating2">2</label>
+							<input id="rating1" type="radio" name="rating" value="1">
+							<label for="rating1">1</label>
+						</span>
+            </div>
+            <div class="description">
+            </div>
+            <div class="color-quality">
+                <div class="color-quality-right">
+                    <h5>Quality :</h5>
+                    <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                        <option value="null">5 Qty</option>
+                        <option value="null">6 Qty</option>
+                        <option value="null">7 Qty</option>
+                        <option value="null">10 Qty</option>
+                    </select>
+                </div>
+            </div>
+            <div class="occasion-cart">
+                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="business" value=" ">
+                            <input type="hidden" name="item_name" value="Wing Sneakers">
+                            <input type="hidden" name="amount" value="650.00">
+                            <input type="hidden" name="discount_amount" value="1.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="return" value=" ">
+                            <input type="hidden" name="cancel_return" value=" ">
+                            <input type="submit" name="submit" value="Add to cart" class="button">
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+            <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
+                <li class="share">Share On : </li>
+                <li><a href="#" class="facebook">
+                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="twitter">
+                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="instagram">
+                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="pinterest">
+                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
             </ul>
-            <div class="resp-tabs-container">
-                <!--/tab_one-->
-                <div class="tab1">
-                    <c:forEach items="${ProduitsHomme}" var="produit">
-                        <div class="col-md-3 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="images/${produit.image}.jpg" alt="" class="pro-image-front">
-                                    <img src="images/m1.jpg" alt="" class="pro-image-back">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="item?id_produit=${produit.idProduit}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
 
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4><a href="single.jsp">${produit.libelle}</a></h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">${produit.prix}</span>
-                                        <del>$69.71</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                                <input type="hidden" name="amount" value="30.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
+        </div>
+        <div class="clearfix"> </div>
+        <!-- /new_arrivals -->
+        <div class="responsive_tabs_agileits">
+            <div id="horizontalTab">
+                <ul class="resp-tabs-list">
+                    <li>Description</li>
+                </ul>
+                <div class="resp-tabs-container">
+                    <!--/tab_one-->
+                    <div class="tab1">
 
-                                </div>
-                            </div>
+                        <div class="single_page_agile_its_w3ls">
+                            <h6>${Item.description}</h6>
                         </div>
-                    </c:forEach>
-                    <div class="clearfix"></div>
+                    </div>
+                    <!--//tab_one-->
+
                 </div>
-                <div class="tab2">
-                    <c:forEach items="${ProduitsFemme}" var="produit">
-                        <div class="col-md-3 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="images/m1.jpg" alt="" class="pro-image-front">
-                                    <img src="images/m1.jpg" alt="" class="pro-image-back">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="item?id_produit=${produit.idProduit}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4><a href="single.jsp">${produit.libelle}</a></h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">${produit.prix}</span>
-                                        <del>$69.71</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                                <input type="hidden" name="amount" value="30.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="tab3">
-                    <c:forEach items="${ProduitsKids}" var="produit">
-                        <div class="col-md-3 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="images/m1.jpg" alt="" class="pro-image-front">
-                                    <img src="images/m1.jpg" alt="" class="pro-image-back">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a  href="item?id_produit=${produit.idProduit}"  class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4><a href="single.jsp">${produit.libelle}</a></h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">${produit.prix}</span>
-                                        <del>$69.71</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                                <input type="hidden" name="amount" value="30.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                    <div class="clearfix"></div>
-                </div>
-
             </div>
+        </div>
+        <!-- //new_arrivals -->
+        <!--/slider_owl-->
+
+        <div class="w3_agile_latest_arrivals">
+            <h3 class="wthree_text_info">Featured <span>Arrivals</span></h3>
+            <div class="col-md-3 product-men single">
+                <div class="men-pro-item simpleCart_shelfItem">
+                    <div class="men-thumb-item">
+                        <img src="images/w2.jpg" alt="" class="pro-image-front">
+                        <img src="images/w2.jpg" alt="" class="pro-image-back">
+                        <div class="men-cart-pro">
+                            <div class="inner-men-cart-pro">
+                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            </div>
+                        </div>
+                        <span class="product-new-top">New</span>
+
+                    </div>
+                    <div class="item-info-product ">
+                        <h4><a href="single.html">Sleeveless Solid Blue Top</a></h4>
+                        <div class="info-product-price">
+                            <span class="item_price">$140.99</span>
+                            <del>$189.71</del>
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <form action="#" method="post">
+                                <fieldset>
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="business" value=" ">
+                                    <input type="hidden" name="item_name" value="Sleeveless Solid Blue Top">
+                                    <input type="hidden" name="amount" value="30.99">
+                                    <input type="hidden" name="discount_amount" value="1.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="return" value=" ">
+                                    <input type="hidden" name="cancel_return" value=" ">
+                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-men single">
+                <div class="men-pro-item simpleCart_shelfItem">
+                    <div class="men-thumb-item">
+                        <img src="images/w4.jpg" alt="" class="pro-image-front">
+                        <img src="images/w4.jpg" alt="" class="pro-image-back">
+                        <div class="men-cart-pro">
+                            <div class="inner-men-cart-pro">
+                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            </div>
+                        </div>
+                        <span class="product-new-top">New</span>
+
+                    </div>
+                    <div class="item-info-product ">
+                        <h4><a href="single.html">Black Basic Shorts</a></h4>
+                        <div class="info-product-price">
+                            <span class="item_price">$120.99</span>
+                            <del>$189.71</del>
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <form action="#" method="post">
+                                <fieldset>
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="business" value=" ">
+                                    <input type="hidden" name="item_name" value="Black Basic Shorts">
+                                    <input type="hidden" name="amount" value="30.99">
+                                    <input type="hidden" name="discount_amount" value="1.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="return" value=" ">
+                                    <input type="hidden" name="cancel_return" value=" ">
+                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-men single">
+                <div class="men-pro-item simpleCart_shelfItem">
+                    <div class="men-thumb-item">
+                        <img src="images/s6.jpg" alt="" class="pro-image-front">
+                        <img src="images/s6.jpg" alt="" class="pro-image-back">
+                        <div class="men-cart-pro">
+                            <div class="inner-men-cart-pro">
+                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            </div>
+                        </div>
+                        <span class="product-new-top">New</span>
+
+                    </div>
+                    <div class="item-info-product ">
+                        <h4><a href="single.html">Aero Canvas Loafers  </a></h4>
+                        <div class="info-product-price">
+                            <span class="item_price">$120.99</span>
+                            <del>$199.71</del>
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <form action="#" method="post">
+                                <fieldset>
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="business" value=" ">
+                                    <input type="hidden" name="item_name" value="Aero Canvas Loafers">
+                                    <input type="hidden" name="amount" value="30.99">
+                                    <input type="hidden" name="discount_amount" value="1.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="return" value=" ">
+                                    <input type="hidden" name="cancel_return" value=" ">
+                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-men single">
+                <div class="men-pro-item simpleCart_shelfItem">
+                    <div class="men-thumb-item">
+                        <img src="images/w7.jpg" alt="" class="pro-image-front">
+                        <img src="images/w7.jpg" alt="" class="pro-image-back">
+                        <div class="men-cart-pro">
+                            <div class="inner-men-cart-pro">
+                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            </div>
+                        </div>
+                        <span class="product-new-top">New</span>
+
+                    </div>
+                    <div class="item-info-product ">
+                        <h4><a href="single.html">Ankle Length Socks</a></h4>
+                        <div class="info-product-price">
+                            <span class="item_price">$100.99</span>
+                            <del>$159.71</del>
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <form action="#" method="post">
+                                <fieldset>
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="business" value=" ">
+                                    <input type="hidden" name="item_name" value="Ankle Length Socks">
+                                    <input type="hidden" name="amount" value="30.99">
+                                    <input type="hidden" name="discount_amount" value="1.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="return" value=" ">
+                                    <input type="hidden" name="cancel_return" value=" ">
+                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <!--//slider_owl-->
         </div>
     </div>
 </div>
-<!-- //new_arrivals -->
-<!-- /we-offer -->
-<div class="sale-w3ls">
-    <div class="container">
-        <h6>We Offer Flat <span>40%</span> Discount</h6>
-
-        <a class="hvr-outline-out button2" href="single.jsp">Shop Now </a>
-    </div>
-</div>
-<!-- //we-offer -->
+<!--//single_page-->
 <!--/grids-->
 <div class="coupons">
     <div class="coupons-grids text-center">
@@ -546,7 +587,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
     <div class="footer_agile_inner_info_w3l">
         <div class="col-md-3 footer-left">
-            <h2><a href="index.jsp"><span>E</span>lite Shoppy </a></h2>
+            <h2><a href="index.html"><span>E</span>lite Shoppy </a></h2>
             <p>Lorem ipsum quia dolor
                 sit amet, consectetur, adipisci velit, sed quia non
                 numquam eius modi tempora.</p>
@@ -570,9 +611,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-4 sign-gd">
                     <h4>Our <span>Information</span> </h4>
                     <ul>
-                        <li><a href="index.jsp">Home</a></li>
-                        <li><a href="mens.jsp">Men's Wear</a></li>
-                        <li><a href="womens.jsp">Women's wear</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mens.html">Men's Wear</a></li>
+                        <li><a href="womens.html">Women's wear</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="typography.html">Short Codes</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -619,15 +660,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-3 sign-gd flickr-post">
                     <h4>Flickr <span>Posts</span></h4>
                     <ul>
-                        <li><a href="single.jsp"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                        <li><a href="single.jsp"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
+                        <li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -716,7 +757,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //login -->
 <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
@@ -736,6 +776,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 
 <!-- //cart-js -->
+<!-- single -->
+<script src="js/imagezoom.js"></script>
+<!-- single -->
 <!-- script for responsive tabs -->
 <script src="js/easy-responsive-tabs.js"></script>
 <script>
@@ -760,14 +803,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     });
 </script>
-<!-- //script for responsive tabs -->
-<!-- stats -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.countup.js"></script>
+<!-- FlexSlider -->
+<script src="js/jquery.flexslider.js"></script>
 <script>
-    $('.counter').countUp();
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
 </script>
-<!-- //stats -->
+<!-- //FlexSlider-->
+<!-- //script for responsive tabs -->
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/jquery.easing.min.js"></script>
@@ -796,7 +844,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!-- //here ends scrolling icon -->
-
 
 <!-- for bootstrap working -->
 <script type="text/javascript" src="js/bootstrap.js"></script>

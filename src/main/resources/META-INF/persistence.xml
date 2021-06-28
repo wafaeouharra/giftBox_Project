@@ -5,13 +5,13 @@
              version="2.2">
     <persistence-unit name="default">
 
-        <class>com.example.entities.Categorie</class>
-        <class>com.example.entities.Client</class>
-        <class>com.example.entities.Commande</class>
-        <class>com.example.entities.Lignecommande</class>
-        <class>com.example.entities.Produit</class>
-        <class>com.example.entities.Role</class>
-        <class>com.example.entities.User</class>
+        <class>ma.ceft.Models.Categorie</class>
+        <class>ma.ceft.Models.Client</class>
+        <class>ma.ceft.Models.Commande</class>
+        <class>ma.ceft.Models.Lignecommande</class>
+        <class>ma.ceft.Models.Produit</class>
+        <class>ma.ceft.Models.Role</class>
+        <class>ma.ceft.Models.User</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/giftbox"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>

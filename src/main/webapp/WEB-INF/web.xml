@@ -8,10 +8,11 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>OneServlet</servlet-name>
-        <servlet-class>com.example.giftBox_Project.HelloServlet</servlet-class>
+        <servlet-class>ma.ceft.giftBox_Project.HelloServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>OneServlet</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
 </web-app>
